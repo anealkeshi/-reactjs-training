@@ -9,6 +9,7 @@ export class Home extends React.Component {
       status: 0,
       homeLink: props.initialLinkName
     }
+    console.log("constructor");
   }
 
   sayGreet(){
@@ -31,7 +32,37 @@ export class Home extends React.Component {
     });
   }
 
+  componentWillMount(){
+    console.log("Component will mount");
+  }
+
+  componentDidMount(){
+    console.log("Component did mount");
+  }
+
+  componentWillReceiveProps(nextProps){
+    console.log("Component will receive props", nextProps);
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    console.log("Should Component update", nextProps, nextState);
+    return true;
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    console.log("Component will update", nextProps, nextState);
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    console.log("Component did mount", prevProps, prevState);
+  }
+
+  componentWillUnmount(){
+    console.log("Component will unmount");
+  }
+
   render(){
+    console.log("Render");
         return (
             <div>
                 <p>In a new Component</p>
